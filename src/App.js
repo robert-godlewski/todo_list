@@ -1,13 +1,15 @@
-import React, {setState} from 'react';
+import React, {useState} from 'react';
 import ItemForm from './components/ItemForm';
+import TodoItems from './components/TodoItems';
 import './App.css';
 
 function App() {
-  const [todoList, setTodoList] = setState([])
+  const [todoList, setTodoList] = useState([]);
 
   return (
     <div className="App">
-      <ItemForm todoList={todoList} setTodoList={setTodoList} />
+      <ItemForm todoList={todoList} setTodoList={setTodoList}/>
+      <TodoItems todoList={todoList} setTodoList={setTodoList}/>
     </div>
   );
 }

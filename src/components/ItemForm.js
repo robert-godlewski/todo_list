@@ -1,15 +1,9 @@
 import React, {useState} from 'react';
 
 const ItemForm = (props) => {
-    const {todoList, setTodoList} = props
+    const {todoList, setTodoList} = props;
     const [details, setDetails] = useState("");
-
-    // const addColor = (e) => {
-    //     e.preventDefault();
-    //     setBoxColorList([...boxColorList, color]);
-    //     setColor("");
-    // };
-
+    
     const addItem = (e) => {
         e.preventDefault();
         setTodoList([
@@ -25,10 +19,12 @@ const ItemForm = (props) => {
     return (
         <div>
             <form onSubmit={addItem}>
-                <div>
-                    <label>Details </label>
-                    <input type="text" name="details" value={details} onChange={(e) => setDetails(e.target.value)}/>
-                </div>
+                <input 
+                    type="text" 
+                    name="details" 
+                    value={details} 
+                    onChange={(e) => setDetails(e.target.value)}
+                />
                 <button>Add</button>
             </form>
         </div>
